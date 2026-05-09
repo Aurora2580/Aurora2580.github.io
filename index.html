@@ -1,41 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurora2580 | 个人主页</title>
-  <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; }
-        hr { border: 0; height: 1px; background: #ddd; margin: 20px 0; }
-        .avatar { display: block; margin: 0 auto; width: 150px; border-radius: 50%; }
-        .center { text-align: center; }
-        h1, h2 { color: #2c3e50; }
-        a { color: #3498db; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        ul { list-style-position: inside; padding-left: 20px; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Liguo Deng | Personal Homepage</title>
+
+  <link rel="stylesheet" href="./style.css" />
 </head>
+
 <body>
-    <hr>
-    <img src="https://github.com/Aurora2580.png" alt="头像" class="avatar">
-    <hr>
-    <h1 class="center">Aurora2580</h1>
-    <p class="center">✨ 个人主页 | 技术学习 | 日常记录 ✨</p>
-    <p class="center">Welcome to my personal homepage</p>
-    <hr>
-    <h2>👋 关于我</h2>
-    <ul>
-      <li>热爱技术、编程与开源，乐于探索各类开发工具</li>
-      <li>专注于积累技术经验，记录学习路上的每一步</li>
-      <li>保持热爱，慢慢成长</li>
-    </ul>
-    <hr>
-    <h2>📫 联系我</h2>
-    <ul>
-        <li>GitHub：<a href="https://github.com/Aurora2580" target="_blank">@Aurora2580</a></li>
-<li>主页地址：<a href="https://aurora2580.github.io" target="_blank">https://aurora2580.github.io</a></li>
-    </ul>
-    <hr>
-    <p class="center">© 2026 Aurora2580 | All Rights Reserved</p>
+  <div class="background">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <header class="hero">
+    <nav class="nav">
+      <div class="logo">Liguo Deng</div>
+
+      <div class="nav-links">
+        <a href="#about">关于我</a>
+        <a href="#research">研究方向</a>
+        <a href="#publications">论文成果</a>
+        <a href="#contact">联系我</a>
+      </div>
+    </nav>
+
+    <section class="hero-card">
+      <div class="avatar-wrap">
+        <img
+          src="https://github.com/Aurora2580.png"
+          alt="Liguo Deng"
+          class="avatar"
+        />
+      </div>
+
+      <div class="hero-info">
+        <p class="eyebrow">Personal Homepage</p>
+
+        <h1>Liguo Deng</h1>
+
+        <p class="subtitle">
+          Capital Normal University
+        </p>
+
+        <p class="desc">
+          Research interests include artificial intelligence, medical image analysis,
+          computer vision, and intelligent healthcare systems.
+        </p>
+
+        <div class="tags">
+          <span>Artificial Intelligence</span>
+          <span>Medical Image Analysis</span>
+          <span>Computer Vision</span>
+          <span>Intelligent Healthcare</span>
+        </div>
+
+       <div class="actions">
+            <a class="btn primary" href="#publications">
+                View Publications
+            </a>
+
+            <a class="btn ghost" href="https://github.com/Aurora2580" target="_blank">
+                GitHub
+            </a>
+
+            <a class="btn ghost" href="#contact">
+                Contact
+            </a>
+        </div>
+        
+      </div>
+    </section>
+  </header>
+
+  <main class="container">
+    <section id="about" class="section">
+      <div class="section-title">
+        <p>About</p>
+        <h2>关于我</h2>
+      </div>
+
+      <div class="about-grid">
+        <article class="info-card">
+          <h3>单位信息</h3>
+          <p>
+            Capital Normal University.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>研究领域</h3>
+          <p>
+            主要关注人工智能、医学图像分析、计算机视觉和智能医疗相关研究。
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>学术成果</h3>
+          <p>
+            相关研究成果发表于 IEEE JBHI、IEEE TCSS、BIBM 等期刊和会议。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <div class="section-title">
+        <p>Research</p>
+        <h2>研究方向</h2>
+      </div>
+
+      <div class="research-grid">
+        <article class="info-card">
+          <h3>医学图像分析</h3>
+          <p>
+            面向临床医学场景，研究基于深度学习的医学图像识别、分割与辅助诊断方法。
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>智能医疗系统</h3>
+          <p>
+            探索人工智能技术在疾病筛查、诊断辅助和健康评估系统中的应用。
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>计算机视觉</h3>
+          <p>
+            关注视觉特征建模、多尺度表示学习、半监督学习与视觉智能分析。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications" class="section">
+      <div class="section-title">
+        <p>Publications</p>
+        <h2>论文成果</h2>
+      </div>
+
+      <div class="paper-list">
+        <article class="paper-card">
+          <div class="paper-top">
+            <span class="paper-badge">Journal</span>
+            <span class="paper-year">2025</span>
+          </div>
+
+          <h3>
+            Enhancing Colorectal Lesion Segmentation through Internal Feature Extraction
+            and Computational Modeling Insights
+          </h3>
+
+          <p class="paper-authors">
+            X. Wan, Y. Hu, D. Qiu, R. Li, L. Deng, T. Ye, S. Zhu, X. Sun,
+            Q. Zhang, W. Yao, et al.
+          </p>
+
+          <p class="paper-venue">
+            IEEE Transactions on Computational Social Systems
+          </p>
+
+        </article>
+
+        <article class="paper-card">
+          <div class="paper-top">
+            <span class="paper-badge">Journal</span>
+            <span class="paper-year">2026</span>
+          </div>
+
+          <h3>
+            A VR-based Automated Strabismus Diagnosis System with Progressive
+            Semi-Supervised Learning
+          </h3>
+
+          <p class="paper-authors">
+            D. Qiu, B. Ma, Z. Xiong, Y. Wang, L. Deng, L. Zhou, X. Cao,
+            W. Chen, Y. Wang, et al.
+          </p>
+
+          <p class="paper-venue">
+            IEEE Journal of Biomedical and Health Informatics
+          </p>
+        </article>
+
+        <article class="paper-card">
+          <div class="paper-top">
+            <span class="paper-badge">Journal</span>
+            <span class="paper-year">2025</span>
+          </div>
+
+          <h3>
+            A Semi-supervised Reinforcement Learning Framework Incorporating the
+            Multi-scale IncepMambaNet Network for Glaucoma Progression Prediction
+          </h3>
+
+          <p class="paper-authors">
+            X. Pan, Z. Xiong, D. Qiu, L. Deng, B. Zhao, X. Cao, X. Wan, F. Zhang
+          </p>
+
+          <p class="paper-venue">
+            Interdisciplinary Sciences: Computational Life Sciences, 1–20
+          </p>
+        </article>
+
+        <article class="paper-card">
+          <div class="paper-top">
+            <span class="paper-badge">Conference</span>
+            <span class="paper-year">2024</span>
+          </div>
+
+          <h3>
+            SS-SwinUnet: A Distillation Method of Swin Transformer for Superior
+            Ocular Image Segmentation
+          </h3>
+
+          <p class="paper-authors">
+            B. Ma, D. Qiu, Z. Xiong, Y. Hu, L. Deng, H. Yuan, X. Wan, F. Zhang
+          </p>
+
+          <p class="paper-venue">
+            2024 IEEE International Conference on Bioinformatics and Biomedicine
+            &#40;BIBM&#41;
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="contact-card">
+            <a>
+                <span>Affiliation</span>
+                <strong>Capital Normal University</strong>
+            </a>
+
+            <a href="mailto:dengliguo3164@gmail.com">
+                <span>Email</span>
+                <strong>dengliguo3164@gmail.com</strong>
+            </a>
+
+            <a href="https://github.com/Aurora2580" target="_blank">
+                <span>GitHub</span>
+                <strong>@Aurora2580</strong>
+            </a>
+
+            <a>
+                <span>Research Area</span>
+                <strong>Artificial Intelligence</strong>
+            </a>
+            </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Liguo Deng | All Rights Reserved</p>
+  </footer>
 </body>
 </html>
