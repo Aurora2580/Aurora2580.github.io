@@ -3,7 +3,8 @@
   --text: #f6f8ff;
   --muted: #aab4c3;
   --card: rgba(255, 255, 255, 0.08);
-  --card-border: rgba(255, 255, 255, 0.16);
+  --card-strong: rgba(255, 255, 255, 0.12);
+  --border: rgba(255, 255, 255, 0.16);
   --primary: #7c5cff;
   --cyan: #00d4ff;
   --pink: #ff4ecd;
@@ -21,11 +22,11 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft YaHei", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(124, 92, 255, 0.22), transparent 32%),
-    radial-gradient(circle at bottom right, rgba(0, 212, 255, 0.18), transparent 35%),
+    radial-gradient(circle at top left, rgba(124, 92, 255, 0.24), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(0, 212, 255, 0.18), transparent 36%),
     var(--bg);
   line-height: 1.7;
   overflow-x: hidden;
@@ -60,8 +61,8 @@ a {
 }
 
 .blob-2 {
-  right: -100px;
-  top: 280px;
+  right: -120px;
+  top: 300px;
   background: var(--cyan);
   animation-delay: 2s;
 }
@@ -83,8 +84,7 @@ a {
   }
 }
 
-.hero,
-.section,
+.container,
 .footer {
   width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
@@ -92,14 +92,16 @@ a {
 
 .hero {
   min-height: 100vh;
-  padding-bottom: 60px;
+  padding-bottom: 70px;
 }
 
 .nav {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 28px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 0;
 }
 
 .logo {
@@ -124,7 +126,8 @@ a {
 }
 
 .hero-card {
-  margin-top: 70px;
+  width: min(1120px, calc(100% - 40px));
+  margin: 70px auto 0;
   padding: 58px;
   display: grid;
   grid-template-columns: 220px 1fr;
@@ -138,11 +141,10 @@ a {
     rgba(255, 255, 255, 0.14),
     rgba(255, 255, 255, 0.05)
   );
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--border);
   border-radius: 40px;
   box-shadow: 0 30px 100px rgba(0, 0, 0, 0.36);
   backdrop-filter: blur(24px);
-
   animation: fadeUp 0.9s ease both;
 }
 
@@ -158,6 +160,7 @@ a {
   );
   transform: translateX(-100%);
   animation: shine 5s ease-in-out infinite;
+  pointer-events: none;
 }
 
 @keyframes shine {
@@ -220,10 +223,11 @@ h1 {
   margin: 22px 0 8px;
   color: var(--text);
   font-size: 20px;
+  font-weight: 600;
 }
 
 .desc {
-  max-width: 620px;
+  max-width: 650px;
   margin: 0;
   color: var(--muted);
   font-size: 16px;
@@ -255,7 +259,7 @@ h1 {
   padding: 12px 22px;
   border-radius: 999px;
   font-weight: 800;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .btn:hover {
@@ -273,7 +277,8 @@ h1 {
 }
 
 .section {
-  padding-top: 80px;
+  padding-top: 86px;
+  animation: fadeUp 0.9s ease both;
 }
 
 .section-title {
@@ -292,76 +297,138 @@ h1 {
 .section-title h2 {
   margin: 0;
   font-size: 36px;
+  line-height: 1.2;
   letter-spacing: -1px;
 }
 
 .about-grid,
-.article-grid {
+.research-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
 
 .info-card,
-.article-card,
+.paper-card,
 .contact-card {
   background: var(--card);
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   backdrop-filter: blur(20px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.26);
 }
 
-.info-card,
-.article-card {
+.info-card {
   padding: 26px;
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
-.info-card:hover,
-.article-card:hover {
+.info-card:hover {
   transform: translateY(-8px);
   border-color: rgba(0, 212, 255, 0.48);
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--card-strong);
 }
 
-.info-card h3,
-.article-card h3 {
+.info-card h3 {
   margin: 0 0 12px;
   font-size: 21px;
 }
 
-.info-card p,
-.article-card p {
+.info-card p {
   margin: 0;
   color: var(--muted);
   font-size: 15px;
 }
 
-.article-meta {
+.paper-list {
+  display: grid;
+  gap: 22px;
+}
+
+.paper-card {
+  padding: 28px;
+  display: grid;
+  gap: 14px;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.paper-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(0, 212, 255, 0.48);
+  background: var(--card-strong);
+}
+
+.paper-top {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 16px;
-  font-size: 13px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-.article-meta span {
+.paper-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
   color: var(--cyan);
+  font-size: 13px;
   font-weight: 800;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.22);
 }
 
-.article-meta time {
+.paper-year {
   color: var(--muted);
+  font-size: 14px;
 }
 
-.article-card strong {
-  display: inline-block;
-  margin-top: 22px;
+.paper-card h3 {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.35;
+  letter-spacing: -0.3px;
+}
+
+.paper-authors {
+  margin: 0;
+  color: #dfe7ff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.paper-venue {
+  margin: 0;
+  color: var(--cyan);
   font-size: 14px;
+  font-weight: 700;
+}
+
+.paper-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.paper-links a {
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: #eef4ff;
+  font-size: 13px;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.paper-links a:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .contact-card {
@@ -392,19 +459,6 @@ h1 {
   font-size: 14px;
 }
 
-.fade-up {
-  opacity: 0;
-  animation: fadeUp 0.8s ease both;
-}
-
-.delay-1 {
-  animation-delay: 0.15s;
-}
-
-.delay-2 {
-  animation-delay: 0.3s;
-}
-
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -423,6 +477,12 @@ h1 {
     gap: 18px;
   }
 
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
   .hero-card {
     grid-template-columns: 1fr;
     gap: 36px;
@@ -436,7 +496,7 @@ h1 {
   }
 
   .about-grid,
-  .article-grid {
+  .research-grid {
     grid-template-columns: 1fr;
   }
 
